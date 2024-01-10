@@ -1,8 +1,8 @@
-import { categories } from './../../../../Backend/Models/Category';
+import { Category } from '../Modal/Category';
 
 //1 reducer state
 export class CategoriesState {
-  public categories: categories[] = [];
+  public categories: Category[] = [];
 }
 
 //2 action types
@@ -20,12 +20,12 @@ export interface categoriesAction {
 }
 
 //4  functions->dispatch
-export const addCategoryAction = (newCategory: categories): categoriesAction => {
+export const addCategoryAction = (newCategory: Category): categoriesAction => {
   return { type: CategoriesActionType.addCategory, payload: newCategory };
 };
 
 export const updateCategoryAction = (
-  updatedCategory: categories
+  updatedCategory: Category
 ): categoriesAction => {
   return {
     type: CategoriesActionType.updateCategory,
@@ -38,7 +38,7 @@ export const deleteCategoryAction = (id: number): categoriesAction => {
 };
 
 export const downloadCategoriesAction = (
-  categories: categories[]
+  categories: Category[]
 ): categoriesAction => {
   return { type: CategoriesActionType.downloadCategory, payload: categories };
 };

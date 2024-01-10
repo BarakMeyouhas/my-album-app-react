@@ -19,7 +19,7 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useEffect, useState } from "react";
-import { categories } from "../../../../../Backend/Models/Category";
+import { Category } from "../../Modal/Category";
 import { useNavigate } from "react-router-dom";
 import { store } from "../../redux/Store";
 import {
@@ -57,7 +57,7 @@ function AddCategory(): JSX.Element {
           name: newCategory,
         }
       );
-      const result: categories = response.data;
+      const result: Category = response.data;
       store.dispatch(addCategoryAction(result));
       const updatedResponse = await axios.get(
         "https://my-album-app-database-d2b58fb12c7d.herokuapp.com/api/v1/album/catList"
